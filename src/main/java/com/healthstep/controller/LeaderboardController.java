@@ -1,9 +1,9 @@
-package com.healthstepcontroller;
+package com.healthstep.controller;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.healthstep.mobile.repository.LeaderboardRepository.TodayRow;
-import com.healthstep.mobile.service.LeaderboardService;
+import com.healthstep.repository.LeaderboardRepository.TodayRow;
+import com.healthstep.service.LeaderboardService;
 
 import java.util.List;
 

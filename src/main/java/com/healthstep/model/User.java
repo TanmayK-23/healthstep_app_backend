@@ -1,4 +1,4 @@
-package com.healthstep.mobile.model;
+package com.healthstep.model;
 
 import jakarta.persistence.*;
 import java.time.Instant;

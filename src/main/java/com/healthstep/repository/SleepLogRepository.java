@@ -1,8 +1,8 @@
-package com.healthstep.mobile.repository;
+package com.healthstep.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.healthstep.mobile.model.SleepLog;
+import com.healthstep.model.SleepLog;
 
 import java.time.LocalDate;
 import java.util.List;

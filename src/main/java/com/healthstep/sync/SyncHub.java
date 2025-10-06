@@ -1,4 +1,4 @@
-package com.healthstep.mobile.sync;
+package com.healthstep.sync;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;

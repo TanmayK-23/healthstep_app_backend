@@ -1,8 +1,8 @@
-package com.healthstep.mobile.service;
+package com.healthstep.service;
 
 import org.springframework.stereotype.Service;
 
-import com.healthstep.mobile.repository.LeaderboardRepository;
+import com.healthstep.repository.LeaderboardRepository;
 
 import java.util.List;
 

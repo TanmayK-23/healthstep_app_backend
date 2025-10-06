@@ -1,11 +1,11 @@
-package com.healthstep.mobile.controller;
+package com.healthstep.controller;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.healthstep.mobile.model.WaterLog;
-import com.healthstep.mobile.repository.WaterLogRepository;
-import com.healthstep.mobile.service.LeaderboardService;
-import com.healthstep.mobile.sync.SyncHub;
+import com.healthstep.model.WaterLog;
+import com.healthstep.repository.WaterLogRepository;
+import com.healthstep.service.LeaderboardService;
+import com.healthstep.sync.SyncHub;
 
 import java.time.LocalDate;
 import java.util.List;

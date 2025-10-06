@@ -1,4 +1,4 @@
-package com.healthstep.mobile.repository;
+package com.healthstep.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

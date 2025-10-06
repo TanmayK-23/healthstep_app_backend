@@ -1,8 +1,8 @@
-package com.healthstep.mobile.repository;
+package com.healthstep.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.healthstep.mobile.model.User;
+import com.healthstep.model.User;
 
 import java.util.Optional;
 
