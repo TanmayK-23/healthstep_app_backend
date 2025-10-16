@@ -37,6 +37,10 @@ public class SecurityConfig {
                 .requestMatchers("/auth/**").permitAll()
                 // allow SSE stream unauthenticated if you need (or require token)
                 .requestMatchers(HttpMethod.GET, "/sync/stream/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/**").authenticated()
+                .requestMatchers(HttpMethod.POST, "/**").authenticated()
+                .requestMatchers(HttpMethod.PUT, "/**").authenticated()
+                .requestMatchers(HttpMethod.DELETE, "/**").authenticated()
                 // everything else requires a valid JWT
                 .anyRequest().authenticated()
             )

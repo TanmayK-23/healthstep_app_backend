@@ -12,14 +12,15 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-
-        // Android WebView + ngrok + Vercel (adjust as needed)
         cfg.setAllowedOriginPatterns(List.of(
-            "file://*",                 // WebView local assets may send Origin: file:// or null
+            "file://*",
             "null",
             "https://*.ngrok-free.dev",
             "https://*.ngrok-free.app",
-            "https://*.vercel.app"
+            "https://*.vercel.app",
+            "http://localhost:*",
+            "https://localhost:*",
+            "*"
         ));
         cfg.setAllowedMethods(List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS","HEAD"));
         cfg.setAllowedHeaders(List.of("*"));
