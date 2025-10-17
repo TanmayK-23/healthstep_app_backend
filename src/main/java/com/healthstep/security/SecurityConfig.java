@@ -31,19 +31,12 @@ public class SecurityConfig {
             .cors(c -> c.configurationSource(corsConfigurationSource))
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // allow all preflights
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                // open auth endpoints (adjust if you prefix with /api)
-                .requestMatchers("/auth/**").permitAll()
-                // allow SSE stream unauthenticated if you need (or require token)
-                .requestMatchers(HttpMethod.GET, "/sync/stream/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/**").authenticated()
-                .requestMatchers(HttpMethod.POST, "/**").authenticated()
-                .requestMatchers(HttpMethod.PUT, "/**").authenticated()
-                .requestMatchers(HttpMethod.DELETE, "/**").authenticated()
-                // everything else requires a valid JWT
-                .anyRequest().authenticated()
-            )
+            .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+            .requestMatchers("/auth/**", "/public/**", "/sync/stream/**").permitAll()
+            // Secure feature routes: require JWT
+            .requestMatchers("/water/**", "/sleep/**", "/workout/**", "/nutrition/**", "/leaderboard/**").authenticated()
+            .anyRequest().authenticated()
+        )
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
             .httpBasic(b -> b.disable())
             .formLogin(f -> f.disable());

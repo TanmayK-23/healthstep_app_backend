@@ -14,17 +14,19 @@ public class CorsConfig {
         CorsConfiguration cfg = new CorsConfiguration();
         cfg.setAllowedOriginPatterns(List.of(
             "file://*",
-            "null",
+            "null", // allow Android WebView origin
             "https://*.ngrok-free.dev",
             "https://*.ngrok-free.app",
             "https://*.vercel.app",
             "http://localhost:*",
             "https://localhost:*",
-            "*"
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "https://awestruckly-identic-astrid.ngrok-free.dev" // your active tunnel
         ));
-        cfg.setAllowedMethods(List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS","HEAD"));
+        cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"));
         cfg.setAllowedHeaders(List.of("*"));
-        cfg.setExposedHeaders(List.of("*"));
+        cfg.setExposedHeaders(List.of("Authorization"));
         cfg.setAllowCredentials(true);
         cfg.setMaxAge(3600L);
 
